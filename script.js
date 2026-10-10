@@ -40,7 +40,7 @@ async function searchShows(event){
 
         //if there are no matching shows 
         if(firstTenShows.length === 0){
-            message.textContent = "Now Shows found with that search word. Please try another one."
+            message.textContent = "No Shows found with that search word. Please try another one."
             return;
         }
 
@@ -55,12 +55,49 @@ async function searchShows(event){
             //show title
             const showTitle = document.createElement("h2");
             showTitle.textContent = matchingShow.name;
-            
+
+            //show summary
+            const showSummary = document.createElement("p");
+
+            if(matchingShow.summary){
+                showSummary.textContent = matchingShow.summary.replace(/<[^>]*>/g, "");
+            }
+            else{
+                showSummary.textContent = "Summary not Available"
+            }
+
+            //premier date 
+            const premierDate = document.createElement("p");
+            if(matchingShow.premiered){
+                premierDate.textContent = "Premiere Date: " + matchingShow.premiered;
+            }
+            else{
+                premierDate.textContent = "Premiere Date: Not Available";
+            }
+
+            //last updated 
+            const lastUpdated = document.createElement("p");
+            if(matchingShow.updated){
+
+                //making the time readable
+                const gettingTime = new Date(matchingShow.updated * 1000);
+                lastUpdated.textContent = "Last Updated: " + gettingTime.toLocaleString();
+            }
+            else{
+                lastUpdated.textContent = "Last updated in seconds: Not Available"
+            }
+
             //title inside card 
             showCard.appendChild(showTitle);
+            showCard.appendChild(showSummary);
+            showCard.appendChild(premierDate);
+            showCard.appendChild(lastUpdated);
 
             //put card into gallery 
             gallery.appendChild(showCard);
+
+            
+
         }
 
     }
