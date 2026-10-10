@@ -87,11 +87,22 @@ async function searchShows(event){
                 lastUpdated.textContent = "Last updated in seconds: Not Available"
             }
 
+            //Generes
+            const genres = document.createElement("p");
+            if(matchingShow.genres){
+                genres.textContent = "Genre: " + matchingShow.genres;
+
+            }
+            else{
+                lastUpdated.textContent = "Genre: Not Available"
+            }
+
             //title inside card 
             showCard.appendChild(showTitle);
             showCard.appendChild(showSummary);
             showCard.appendChild(premierDate);
             showCard.appendChild(lastUpdated);
+            showCard.appendChild(genres);
 
             //put card into gallery 
             gallery.appendChild(showCard);
