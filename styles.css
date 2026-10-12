@@ -1,3 +1,99 @@
-header{
-    background-color: orange;
+body{
+    background-color: #FCEEF3;
+    color: #604B53; 
 }
+
+header{
+    background-color: #FFFCFD;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #D8BD82;
+    padding: 10px;
+    margin: 15px;
+    color: #624954;
+}
+
+#searchInput{
+    background-color: white;
+    color: #604B53;
+    border: 1px solid #D8BD82;
+    border-radius: 10px;
+    padding: 10px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+#searchForm{
+    display: flex;
+    gap: 5px;
+}
+#searchForm button{
+    background-color: #B77F92;
+    color: white;
+    border: 1px solid #D8BD82;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 25%;
+}
+
+#searchForm button:hover{
+    background-color: #986677;
+}
+
+/*loading + error massages*/
+#message{
+    text-align: center;
+    color: #986677;
+}
+
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 25px;
+    max-width: 1300px;
+}
+
+.show-card{
+    background-color: #FFFFFF;
+    border: 1px solid #D8BD82;
+    border-radius: 10px;
+    padding: 25px;
+    flex: 1 1 280px;
+}
+
+.show-card h2{
+    border-bottom: 1px solid #D8BD82;
+    text-align: center;
+    color:#B77F92
+}
+
+.show-card a{
+    background-color:#FCEEF3;
+    border: 1px solid #D8BD82;
+    border-radius: 25px;
+    padding: 10px;
+    color: #986677;
+    display:block;
+    text-align: center;
+}
+
+.show-card a:hover{
+    background-color: #D8BD82;
+}
+
+footer{
+    background-color: #FFFCFD;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid #D8BD82;
+    border-radius: 25px;
+
+
+}
+
+
+
+
