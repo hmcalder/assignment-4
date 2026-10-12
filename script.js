@@ -1,8 +1,19 @@
+/* 
+Hailey Thompson 
+October 16, 2026
+CSC 372-01
+
+This file finds information about TV shows from TV maze and displays it.
+*/
+
+
+
 //grabbing my html 
-const searchForm = document.querySelector("#searchForm");
-const searchInput = document.querySelector("#searchInput");
-const message = document.querySelector("#message");
-const gallery = document.querySelector("#gallery");
+let searchForm = document.querySelector("#search-form");
+let searchInput = document.querySelector("#search-input");
+let message = document.querySelector("#message");
+let gallery = document.querySelector("#gallery");
+
 
 //listen for the click
 searchForm.addEventListener("submit", searchShows);
@@ -12,6 +23,7 @@ searchInput.value = "Blue Bloods";
 searchShows();
 
 //making the function 
+//This function searches and displays information about TV shows found from TVmaze. 
 async function searchShows(event) {
     if(event){
         event.preventDefault();
@@ -33,6 +45,9 @@ async function searchShows(event) {
     try {
         const response = await fetch(apiUrl);
 
+        if(response.status === 429){
+            throw new Error("Too many requests at one time. Please try again.");
+        }
 
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);

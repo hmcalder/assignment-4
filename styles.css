@@ -1,3 +1,9 @@
+/* 
+Hailey Thompson 
+October 16, 2026
+CSC 372-01
+*/
+
 body{
     background-color: #FCEEF3;
     color: #604B53; 
@@ -13,7 +19,7 @@ header{
     color: #624954;
 }
 
-#searchInput{
+#search-input{
     background-color: white;
     color: #604B53;
     border: 1px solid #D8BD82;
@@ -23,11 +29,11 @@ header{
     box-sizing: border-box;
 }
 
-#searchForm{
+#search-form{
     display: flex;
     gap: 5px;
 }
-#searchForm button{
+#search-form button{
     background-color: #B77F92;
     color: white;
     border: 1px solid #D8BD82;
@@ -37,7 +43,7 @@ header{
     width: 25%;
 }
 
-#searchForm button:hover{
+#search-form button:hover{
     background-color: #986677;
 }
 
@@ -90,8 +96,13 @@ footer{
     margin: 20px;
     border: 1px solid #D8BD82;
     border-radius: 25px;
+}
 
-
+footer a{
+    color: #986677;
+}
+footer a:hover{
+    color: #D8BD82;
 }
 
 
